@@ -14,13 +14,7 @@ app.post("/api", (req, res) => {
 
   const sortedArray = data.toLowerCase().trim().split("").sort();
 
-  return res.status(200).json({ word: sortedArray.join("") });
-
-/*
-});
-  app.listen(3000, () => {
-  console.log("Server running on port 3000");
-*/
+  return res.status(200).json({ word: sortedArray });
 });
 
 module.exports = app;
