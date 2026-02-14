@@ -12,7 +12,7 @@ app.post("/", (req, res) => {
 
   const sortedArray = data.toLowerCase().trim().split("").sort();
 
-  return res.json({ word: sortedArray });
+  return res.status(200).json({ word: sortedArray });
 /*
 });
   app.listen(3000, () => {
