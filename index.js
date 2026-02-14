@@ -10,7 +10,7 @@ app.post("/", (req, res) => {
     return res.status(400).json({ error: "You did the wrong thing Trash panda, input a string and be a proper raccoon whisperer" });
   }
 
-  const sortedArray = data.toLowerCase().trim().split("").sort();
+  const sortedArray = data.toLowerCase().trim().split("").sort((a, b) => a.localeCompare(b));
 
   return res.status(200).json({ word: sortedArray });
 /*
@@ -20,6 +20,4 @@ app.post("/", (req, res) => {
 */
 });
 
-module.exports = (req, res) => {
-  app(req, res);
-};
+module.exports = app;
